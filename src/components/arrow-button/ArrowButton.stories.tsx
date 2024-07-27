@@ -9,11 +9,14 @@ const meta: Meta<typeof ArrowButton> = {
 export default meta;
 type Story = StoryObj<typeof ArrowButton>;
 
+// for fix Unexpected empty arrow function  @typescript-eslint/no-empty-function
+const onClickDefault = () => console.log('');
+
 export const ArrowButtonStory: Story = {
 	render: () => {
 		return (
 			<>
-				<ArrowButton />
+				<ArrowButton onClick={onClickDefault} isOpened={false} />
 			</>
 		);
 	},
